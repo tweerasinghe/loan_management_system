@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Sarasavi" language="groovy" pageWidth="595" pageHeight="421" orientation="Landscape" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3bd1208f-9030-40b3-a364-687d36888dfa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="time" class="java.lang.String"/>
+	<parameter name="user" class="java.lang.String"/>
+	<parameter name="shopName" class="java.lang.String"/>
+	<parameter name="shopAddress" class="java.lang.String"/>
+	<parameter name="shopEmail" class="java.lang.String"/>
+	<parameter name="shopContact" class="java.lang.String"/>
+	<parameter name="InvoiceId" class="java.lang.String"/>
+	<parameter name="Cname" class="java.lang.String"/>
+	<parameter name="Cadress" class="java.lang.String"/>
+	<parameter name="Cnic" class="java.lang.String"/>
+	<parameter name="PaymentId" class="java.lang.String"/>
+	<parameter name="Amount" class="java.lang.String"/>
+	<parameter name="Cash" class="java.lang.String"/>
+	<parameter name="Balance" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="2" width="552" height="20" uuid="44df956f-67f4-4543-906a-984364f45803"/>
+				<textElement textAlignment="Left">
+					<font fontName="Cambria" size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="21" width="553" height="20" uuid="f8b2673a-4b34-4480-bb75-940c30200fe5"/>
+				<textElement textAlignment="Left">
+					<font fontName="Cambria" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="41" width="553" height="20" uuid="72f5092d-1b1c-4b54-876b-151af7b2c330"/>
+				<textElement textAlignment="Left">
+					<font fontName="Cambria" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopEmail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="61" width="554" height="20" uuid="a2718d3e-9c71-4a1e-b5f6-7a55bdbeb705"/>
+				<textElement textAlignment="Left">
+					<font fontName="Cambria" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopContact}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="469" y="2" width="85" height="20" uuid="db1e0d60-5aa3-42dd-8fa2-8014daabf6a6"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="4" width="33" height="20" uuid="cd1ad0ae-3407-4a44-9b10-d13e734dac5d"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="5" width="29" height="20" uuid="3b445e02-d638-4f22-a4ed-220290d3e2a1"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[Time :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="39" y="4" width="105" height="20" uuid="638092c0-f90b-439f-b047-4dddd6c56dae"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="181" y="5" width="100" height="20" uuid="06c354b3-c86a-4905-961f-35113cc6107b"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{time}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="338" y="5" width="28" height="20" uuid="0cd4d269-c8ea-4187-b3d1-eee0e6c626c1"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[User :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="363" y="6" width="100" height="20" uuid="f44ae014-2b92-4cfb-be6e-b01ab615cb18"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="26" width="553" height="3" forecolor="#000000" uuid="4bc2ecd4-7cca-49a4-8110-31d65ae033b9"/>
+			</line>
+			<line>
+				<reportElement x="1" y="3" width="553" height="1" uuid="7e4d60c6-e3a0-40f6-a7a5-c272810d5f53"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="165" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="0" width="70" height="20" uuid="f2e4d7ba-522c-4211-b021-9959d533e66e"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[INVOICE  ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="20" width="85" height="20" uuid="7fbaf6db-2df5-42be-a883-3a709fc07073"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[CUSTOMER NAME :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="40" width="98" height="20" uuid="538a0bac-cced-4d69-8d27-466a27c306de"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[CUSTOMER ADRESS : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="59" width="98" height="20" uuid="4752243c-2c9b-415f-b18d-592532c42732"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[CUSTOMER NIC : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="20" width="70" height="20" uuid="37d31d95-4a00-4d96-8c0c-d0b80f247956"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[AMOUNT  RS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="0" width="70" height="20" uuid="edbddfba-003a-4edb-802d-5b1983cdb362"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[PAYMENT ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="39" width="70" height="20" uuid="6f754aa0-e9a3-4fec-b66f-8595987f1fdc"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[CASH :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="337" y="60" width="70" height="20" uuid="0bb11cff-8638-490e-8870-d69cdf2ba4c6"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[BALANCE :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="115" width="553" height="3" forecolor="#000000" uuid="7aaed503-4d13-43a4-82f7-c46c21b5c4e7"/>
+			</line>
+			<line>
+				<reportElement x="5" y="140" width="101" height="1" uuid="bd4b1e7b-915d-401b-bfe4-146c6a80bb3e"/>
+			</line>
+			<staticText>
+				<reportElement x="33" y="138" width="98" height="20" uuid="35a61cb3-a8d8-40b3-b11d-bc6786d36bdd"/>
+				<textElement>
+					<font fontName="Cambria" size="10"/>
+				</textElement>
+				<text><![CDATA[signature]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="96" y="0" width="229" height="20" uuid="390b26b1-3c46-498a-8634-e885c2a38434"/>
+				<textFieldExpression><![CDATA[$P{InvoiceId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="20" width="227" height="20" uuid="469c377e-5428-4b75-94ad-3718f7560988"/>
+				<textFieldExpression><![CDATA[$P{Cname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="40" width="259" height="20" uuid="21cdbe87-0e30-422f-8e84-e188203e2ba1"/>
+				<textFieldExpression><![CDATA[$P{Cadress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="97" y="59" width="241" height="20" uuid="db165c30-84ac-4ad5-b2aa-9c500106e36c"/>
+				<textFieldExpression><![CDATA[$P{Cnic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="387" y="0" width="166" height="20" uuid="66cccc03-8abe-4d42-b079-499642a5a8a5"/>
+				<textFieldExpression><![CDATA[$P{PaymentId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="387" y="20" width="166" height="20" uuid="0d7cf361-00ed-4b1a-81cf-f9b6f499c69b"/>
+				<textFieldExpression><![CDATA[$P{Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="387" y="39" width="166" height="20" uuid="77acc74b-0d0d-4644-9b2e-4bc2cfc7efe7"/>
+				<textFieldExpression><![CDATA[$P{Cash}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="387" y="60" width="166" height="20" uuid="377f1da7-c103-44e9-815a-e6df82eca370"/>
+				<textFieldExpression><![CDATA[$P{Balance}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

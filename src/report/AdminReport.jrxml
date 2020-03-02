@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Sarasavi" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3bd1208f-9030-40b3-a364-687d36888dfa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="time" class="java.lang.String"/>
+	<parameter name="user" class="java.lang.String"/>
+	<parameter name="RCount" class="java.lang.Integer"/>
+	<parameter name="shopName" class="java.lang.String"/>
+	<parameter name="shopAddress" class="java.lang.String"/>
+	<parameter name="shopEmail" class="java.lang.String"/>
+	<parameter name="shopContact" class="java.lang.String"/>
+	<parameter name="minDate" class="java.lang.String"/>
+	<parameter name="maxDate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from loan_payment where payed_date>=$P{minDate}
+and payed_date <=$P{maxDate} and status='1']]>
+	</queryString>
+	<field name="idloan_payment" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="genarated_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cash" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="balance" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payment_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="month" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payed_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payed_time" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="loan_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="user_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="count" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{idloan_payment}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="1" width="801" height="20" uuid="44df956f-67f4-4543-906a-984364f45803"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="21" width="801" height="20" uuid="f8b2673a-4b34-4480-bb75-940c30200fe5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="41" width="801" height="20" uuid="72f5092d-1b1c-4b54-876b-151af7b2c330"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopEmail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="61" width="801" height="20" uuid="a2718d3e-9c71-4a1e-b5f6-7a55bdbeb705"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopContact}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="46" y="11" width="28" height="20" uuid="cd1ad0ae-3407-4a44-9b10-d13e734dac5d"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[Date ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="11" width="29" height="20" uuid="3b445e02-d638-4f22-a4ed-220290d3e2a1"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="0" width="801" height="3" forecolor="#CCCCCC" uuid="7df49726-794c-45db-9be4-53160e36c678"/>
+			</line>
+			<staticText>
+				<reportElement x="249" y="11" width="1" height="20" uuid="fd08e960-1325-440c-8617-88956cd8f97e"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="11" width="1" height="20" uuid="f978b89e-7fbb-4443-a7ff-9158e0490b74"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="81" y="11" width="100" height="20" uuid="638092c0-f90b-439f-b047-4dddd6c56dae"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="11" width="100" height="20" uuid="06c354b3-c86a-4905-961f-35113cc6107b"/>
+				<textFieldExpression><![CDATA[$P{time}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="402" y="11" width="28" height="20" uuid="0cd4d269-c8ea-4187-b3d1-eee0e6c626c1"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="11" width="1" height="20" uuid="bb3c4ca2-99da-459b-80da-5e19caf65512"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="11" width="100" height="20" uuid="f44ae014-2b92-4cfb-be6e-b01ab615cb18"/>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="38" width="801" height="3" forecolor="#CCCCCC" uuid="4bc2ecd4-7cca-49a4-8110-31d65ae033b9"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="13" width="100" height="20" uuid="57537359-eda6-4278-97d7-84fb4d14a57f"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Payment ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="13" width="118" height="20" uuid="d6c09b1c-edce-4998-881a-a90961ca7613"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[genarated Payment ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="13" width="100" height="20" uuid="56a94811-e18e-43c4-981f-b8b7af2fffe5"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="12" width="100" height="20" uuid="44a7b33e-90ac-4e1f-bee6-c251e39408b9"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Payed Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="516" y="14" width="100" height="20" uuid="bdeb4d62-b418-4563-b632-08d148910582"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Loan ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="659" y="14" width="100" height="20" uuid="10fd2fac-87b4-4ba1-9d62-8dfdbc58f2a1"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[User ID]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="30" width="801" height="3" forecolor="#CCCCCC" uuid="2be11990-f104-46f2-bbbe-6c43dfc8b243"/>
+			</line>
+			<line>
+				<reportElement x="2" y="8" width="801" height="3" forecolor="#CCCCCC" uuid="9da087d6-a2e0-4993-964c-3f831e6431f8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="6" width="100" height="20" uuid="3485697c-680b-4171-856f-a3b5de04b767"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idloan_payment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="6" width="100" height="20" uuid="924b5d64-fe20-4276-8199-cbb33cc4c4a3"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{genarated_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="6" width="100" height="20" uuid="d302f9eb-c407-4549-91b9-be7ff7845eb1"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="374" y="6" width="100" height="20" uuid="a2394fc6-547b-47ae-a313-9c3c5fc63863"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payed_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="516" y="6" width="100" height="20" uuid="28a7cb43-b4bb-4791-be3f-3aabb313c680"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{loan_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="658" y="6" width="100" height="20" uuid="056679c5-9b42-40c9-9b87-1b8ca4231d08"/>
+				<textElement>
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="658" y="10" width="100" height="20" uuid="0a7af8bc-2a42-4d44-94b3-64e18d00a7ea"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="559" y="10" width="100" height="20" uuid="b7998d1f-499c-4265-a519-d36a867b2874"/>
+				<textElement>
+					<font fontName="Cambria" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL  RS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="10" width="100" height="20" uuid="1186e7b6-a131-4fe3-8da2-b6fe41db671a"/>
+				<textElement>
+					<font fontName="Cambria" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="10" width="100" height="20" uuid="66f1c33a-095c-47a7-9dca-97a2e94495e1"/>
+				<textElement>
+					<font fontName="Cambria" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{minDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="10" width="100" height="20" uuid="a2ac7eb2-2fbb-40d8-a3b2-7b489d54f35c"/>
+				<textElement>
+					<font fontName="Cambria" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{maxDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="4" width="801" height="1" uuid="83360ca1-079c-47ed-a866-2c5fc6b4a650"/>
+			</line>
+			<line>
+				<reportElement x="0" y="36" width="801" height="1" uuid="6e6f9f4e-b04b-4e2a-a517-ee60a75122bd"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

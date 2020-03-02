@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Sarasavi" language="groovy" pageWidth="595" pageHeight="421" orientation="Landscape" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3bd1208f-9030-40b3-a364-687d36888dfa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="time" class="java.lang.String"/>
+	<parameter name="user" class="java.lang.String"/>
+	<parameter name="shopName" class="java.lang.String"/>
+	<parameter name="shopAddress" class="java.lang.String"/>
+	<parameter name="shopEmail" class="java.lang.String"/>
+	<parameter name="shopContact" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="1" width="553" height="20" uuid="44df956f-67f4-4543-906a-984364f45803"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light" size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="21" width="553" height="20" uuid="f8b2673a-4b34-4480-bb75-940c30200fe5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="41" width="553" height="20" uuid="72f5092d-1b1c-4b54-876b-151af7b2c330"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopEmail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="61" width="554" height="20" uuid="a2718d3e-9c71-4a1e-b5f6-7a55bdbeb705"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{shopContact}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="46" y="11" width="28" height="20" uuid="cd1ad0ae-3407-4a44-9b10-d13e734dac5d"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[Date ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="11" width="29" height="20" uuid="3b445e02-d638-4f22-a4ed-220290d3e2a1"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="11" width="1" height="20" uuid="fd08e960-1325-440c-8617-88956cd8f97e"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="3" width="1" height="20" uuid="f978b89e-7fbb-4443-a7ff-9158e0490b74"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="81" y="12" width="100" height="20" uuid="638092c0-f90b-439f-b047-4dddd6c56dae"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="12" width="100" height="20" uuid="06c354b3-c86a-4905-961f-35113cc6107b"/>
+				<textFieldExpression><![CDATA[$P{time}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="402" y="11" width="28" height="20" uuid="0cd4d269-c8ea-4187-b3d1-eee0e6c626c1"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="11" width="1" height="20" uuid="bb3c4ca2-99da-459b-80da-5e19caf65512"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="436" y="12" width="100" height="20" uuid="f44ae014-2b92-4cfb-be6e-b01ab615cb18"/>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="33" width="553" height="3" forecolor="#CCCCCC" uuid="4bc2ecd4-7cca-49a4-8110-31d65ae033b9"/>
+			</line>
+			<line>
+				<reportElement x="1" y="3" width="553" height="1" uuid="7e4d60c6-e3a0-40f6-a7a5-c272810d5f53"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="58" y="0" width="347" height="20" forecolor="#333333" uuid="35fcaf65-c277-44f6-b2d8-687f1cf977c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Segoe UI Light" size="14" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LOAN APPLICATION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="19" width="552" height="3" forecolor="#CCCCCC" uuid="12c2e8e7-fcf7-43c4-a85a-782fa770523e"/>
+			</line>
+			<staticText>
+				<reportElement x="248" y="2" width="201" height="20" forecolor="#333333" uuid="17a526dc-0f94-49bc-ad86-b7358edf25c6"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="FMBindumathi" size="16" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Kh whÿïm; ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="330" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="144" height="20" uuid="145e8dec-e976-46cf-a93b-5edbdc394da5"/>
+				<textElement>
+					<font fontName="FMBindumathi" size="12"/>
+				</textElement>
+				<text><![CDATA[whÿïlref.a iïmQ¾K ku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="144" height="20" uuid="41adf0bb-76e0-4ee7-8fb8-f02cf21ca80c"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[FULL NAME OF APPLICANT]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="137" y="15" width="417" height="35" uuid="3f122e33-01f7-4e4a-a35b-b7705afaef68"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="32" y="82" width="144" height="20" uuid="ff0779e8-b258-475a-87b9-dce4446fde4d"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[APPLICANT ADRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="62" width="144" height="20" uuid="caecfbaa-7e80-4f89-880a-7109099e6461"/>
+				<textElement>
+					<font fontName="FMBindumathi" size="12"/>
+				</textElement>
+				<text><![CDATA[whÿïlref.a ,smskh ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="137" y="62" width="417" height="35" uuid="30833e3e-eb99-42d2-8969-7b055cc83586"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="46" y="111" width="135" height="20" uuid="12e6f518-8389-4013-a554-91f70486110e"/>
+				<textElement>
+					<font fontName="FMBindumathi" size="12"/>
+				</textElement>
+				<text><![CDATA[yeÿkqïm;a wxlh ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="131" width="144" height="20" uuid="a684f646-4edb-4155-97f0-5d3eff9891fd"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[APPLICANT NIC]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="137" y="111" width="417" height="35" uuid="c5de1834-bab2-4826-aef3-20e41a700551"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="64" y="159" width="135" height="20" uuid="a3ebd5f6-e079-475a-93c8-a32fdf2da9dc"/>
+				<textElement>
+					<font fontName="FMBindumathi" size="12"/>
+				</textElement>
+				<text><![CDATA[ÿrl;k wxl ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="180" width="144" height="20" uuid="f9e2c8b5-eab6-4e83-b277-4ec5cf449bf0"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[CONTACT NUMBERS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="138" y="159" width="417" height="35" uuid="08a95c05-c6dd-45f4-93c2-991326ef2d80"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="13" y="210" width="117" height="20" uuid="3192f3ce-bead-47ae-99d3-8ea866734847"/>
+				<textElement>
+					<font fontName="FMBindumathi" size="12"/>
+				</textElement>
+				<text><![CDATA[n,dfmdfrd;a;=jk uqo, ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="229" width="114" height="20" uuid="966acb65-26ba-469f-a2ed-d2e0bc1f775b"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="138" y="210" width="417" height="35" uuid="80722186-fe22-475d-894a-f782c8857dab"/>
+			</rectangle>
+			<line>
+				<reportElement x="138" y="296" width="200" height="1" uuid="739607b1-eda6-48a6-9784-75d49b110fdd"/>
+			</line>
+			<staticText>
+				<reportElement x="195" y="297" width="117" height="20" uuid="9ad540fa-984b-472a-88e7-c026601e2250"/>
+				<textElement>
+					<font fontName="FMBindumathi" size="10"/>
+				</textElement>
+				<text><![CDATA[whÿïlref.a w;aik ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="179" y="306" width="135" height="20" uuid="8df1d430-5a9a-4126-8921-78bfaaf8562b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[APPLICANT SIGNATURE]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="2" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
